@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Students</title>
+<style>
+    table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    h1 {
+    text-align:center;
+    }
+
+    table {
+    margin: 0;
+
+  margin-left: auto;
+            margin-right: auto;
+}
+</style>
+</head>
+{% extends "base.html" %}
+{% block home %}
+<body>
+<h1>{{ title }}</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Manufacturer</td>
+        <td>Year</td>
+        <td>Price</td>
+        <td>Engine</td>
+
+    </tr>
+
+    </thead>
+    {% for k in queryset %}
+    <tbody>
+        <tr>
+            <td>
+             {{k.car_name}}
+            </td>
+            <td>{{k.car_manufacturer}}</td>
+            <td>{{k.car_year}}</td>
+            <td>{{k.car_price}}</td>
+            <td>{{k.car_engine}}</td>
+
+        </tr>
+    </tbody>
+     {% endfor %}
+</table>
+</body>
+{% endblock %}
+</html>
